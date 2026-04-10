@@ -2,4 +2,5 @@
 
 ## Project setup
 1. `uv init`
-2. `uv add langchain langchain-ollama langchain-google-genai python-dotenv black isort`
+2. `uv add langchain langchain-ollama langchain-google-genai python-dotenv black isort` 
+3. start creating agents.
