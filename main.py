@@ -11,7 +11,7 @@ def main():
     information = """
 Prakhar
     """
-    """// this information we are going to propoage to LLM"""
+    """// this information we are going to propagate to LLM"""
 
     summary_template = """
     Given the name of a peron {information}, I want you to greet the person, with his name.
