@@ -29,7 +29,7 @@ def get_product_price(product: str) -> float:
 
 @tool
 def apply_discount(price: float, discount_tier: str) -> float:
-    """Apply a discount tier to a price adn return the final price, round to 2 decimal places.
+    """Apply a discount tier to a price and return the final price, round to 2 decimal places.
     Available tiers: bronze, silver, gold."""
     print(f"   >>> Executing apply_discount(price='{price}', discount_tier='{discount_tier}')")
     discount_percentages = get_discount_percentages()
@@ -41,7 +41,7 @@ def apply_discount(price: float, discount_tier: str) -> float:
 @traceable(name="Langchain Agent Loop") #name will help is trace everything inside the function under langchain
 def run_agent(question: str):
     tools = [get_product_price, apply_discount] 
-    tools_dict = {t.name: t for t in tools} # this is goin to help us to take the reuslt of LLM (tool name) and get python object (tool) we can execute, hence using it going to be much clear
+    tools_dict = {t.name: t for t in tools} # this is goin to help us to take the result of LLM (tool name) and get python object (tool) we can execute, hence using it going to be much clear
     llm = init_chat_model(f"ollama: {MODEL}", temperature=0) # this is more convient here we dont need to import the object of chat model itself
     # now let our model know the known tools
     llm_with_tools = llm.bind_tools(tools) # this .bind_tools is avaliable for all LLM supporting funtion calling capability.
